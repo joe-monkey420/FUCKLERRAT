@@ -1,0 +1,62 @@
+.bold{
+    font-weight: bold;
+}
+footer{
+    position: absolute;
+    bottom: 0px;
+    float: bottom;
+}
+#texthoverind{
+    position: relative;
+    display: block;
+    float: left;
+    width: 6px;
+    height: 12px;
+    top: 2px;
+    margin-left: -4px;
+    background-color: white;
+}
+.terminal_1{
+    display: block;
+    float: left;
+    margin-right: 5px;
+    color: lime;
+}
+.terminal_2{
+    color: white;
+    position: absolute;
+    background-color:rgb(15, 15, 15);
+    outline: none;
+    border: none;
+    bottom: 4px;
+    font-family: monospace;
+    
+}
+#biden{
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 31px);
+    overflow: scroll;
+    overflow-x:hidden;
+    overflow-wrap:break-word;
+}
+body{
+    color: white;
+    background-color: rgb(15, 15, 15);
+    font-family: monospace;
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
+#terminalBar{
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    bottom: 0px;
+}
+footer{
+    background-color: rgb(15, 15, 15);
+    font-family: monospace;
+    user-select: none;
+    width: 100%;
+    overflow-wrap: break-word;
+}
